@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Contact B2B Engineering Services Limited for all your engineering supply needs. Get a quote, request information, or visit our office in Dar es Salaam, Tanzania.">
+    <title>Contact Us | B2B Engineering Services Limited</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container-wide">
+            <div class="header-container">
+                <a href="index.html" class="logo-link">
+                    <img src="images/logo.png" alt="B2B Engineering Services" class="logo">
+                </a>
+
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About Us</a>
+                    <a href="products.html" class="nav-link">Products</a>
+                    <a href="services.html" class="nav-link">Services</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                    <a href="quote.html" class="btn btn-primary btn-sm">Request Quote</a>
+                </nav>
+
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="hero-redesign" style="background-image: url('images/hero-background.png');">
+        <div class="container-wide">
+            <div class="hero-content-redesign animate-on-scroll">
+                <h1 class="hero-title">Get In Touch</h1>
+                <p class="hero-subtitle">We're here to help with all your engineering supply needs</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info Cards -->
+    <section class="section bg-gray">
+        <div class="container">
+            <div class="grid grid-3 gap-lg">
+                <!-- Phone Contact -->
+                <div class="card text-center animate-on-scroll">
+                    <div style="font-size: 3.5rem; color: var(--primary-green); margin-bottom: 1rem;">📞</div>
+                    <h4 style="margin-bottom: 1rem;">Call Us</h4>
+                    <p style="color: var(--text-light); margin-bottom: 0.5rem;">Speak with our team</p>
+                    <a href="tel:+255762354348"
+                        style="color: var(--accent-gold); font-weight: 600; font-size: 1.125rem;">+255 762 354 348</a>
+                    <p style="font-size: 0.875rem; color: var(--text-light); margin-top: 1rem;">
+                        <strong>Business Hours:</strong><br>
+                        Mon-Fri: 8:00 AM - 6:00 PM<br>
+                        Sat: 9:00 AM - 2:00 PM
+                    </p>
+                </div>
+
+                <!-- Email Contact -->
+                <div class="card text-center animate-on-scroll">
+                    <div style="font-size: 3.5rem; color: var(--primary-green); margin-bottom: 1rem;">📧</div>
+                    <h4 style="margin-bottom: 1rem;">Email Us</h4>
+                    <p style="color: var(--text-light); margin-bottom: 0.5rem;">Send us a message</p>
+                    <a href="mailto:sales@b2bengineeringservices.com"
+                        style="color: var(--accent-gold); font-weight: 600; font-size: 1.125rem;">sales@b2bengineeringservices.com</a>
+                    <p style="font-size: 0.875rem; color: var(--text-light); margin-top: 1rem;">
+                        We typically respond within 24 hours
+                    </p>
+                </div>
+
+                <!-- Office Location -->
+                <div class="card text-center animate-on-scroll">
+                    <div style="font-size: 3.5rem; color: var(--primary-green); margin-bottom: 1rem;">📍</div>
+                    <h4 style="margin-bottom: 1rem;">Visit Us</h4>
+                    <p style="color: var(--text-light); margin-bottom: 0.5rem;">Our office location</p>
+                    <p style="font-weight: 600; margin-bottom: 0.5rem;">
+                        P.O. BOX 5566<br>
+                        Kimara Mwisho<br>
+                        Dar es Salaam, Tanzania
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form & Map Section -->
+    <section class="section">
+        <div class="container">
+            <div class="grid grid-2 gap-lg">
+                <!-- Contact Form -->
+                <div class="animate-on-scroll">
+                    <h2 style="margin-bottom: 1.5rem;">Send Us a Message</h2>
+                    <p style="color: var(--text-light); margin-bottom: 2rem;">
+                        Fill out the form below and our team will get back to you within 24 hours. For urgent inquiries,
+                        please call us directly.
+                    </p>
+
+                    <form id="contactForm" onsubmit="window.B2BWebsite.handleFormSubmit(event, 'contactForm')">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name *</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                            <div class="form-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company" class="form-label">Company Name *</label>
+                            <input type="text" id="company" name="company" class="form-control" required>
+                            <div class="form-error"></div>
+                        </div>
+
+                        <div class="grid grid-2 gap-md">
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email *</label>
+                                <input type="email" id="email" name="email" class="form-control" required>
+                                <div class="form-error"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" class="form-control" required>
+                                <div class="form-error"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="industry" class="form-label">Industry</label>
+                            <select id="industry" name="industry" class="form-control">
+                                <option value="">Select your industry</option>
+                                <option value="construction">Construction & Infrastructure</option>
+                                <option value="manufacturing">Manufacturing & Industrial</option>
+                                <option value="agriculture">Agriculture & Farming</option>
+                                <option value="healthcare">Healthcare & Medical</option>
+                                <option value="education">Education & Institutions</option>
+                                <option value="government">Government & Public Sector</option>
+                                <option value="hospitality">Hospitality & Tourism</option>
+                                <option value="energy">Energy & Utilities</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="interest" class="form-label">Service/Product Interest</label>
+                            <select id="interest" name="interest" class="form-control">
+                                <option value="">What are you looking for?</option>
+                                <option value="tools">Tools & Hardware</option>
+                                <option value="electrical">Electrical & ICT Solutions</option>
+                                <option value="materials">Building Materials</option>
+                                <option value="industrial">Industrial Equipment</option>
+                                <option value="safety">Safety Equipment</option>
+                                <option value="office">Office & Facility</option>
+                                <option value="automotive">Automotive Parts</option>
+                                <option value="agriculture">Agricultural Solutions</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message *</label>
+                            <textarea id="message" name="message" class="form-control" rows="6" required></textarea>
+                            <div class="form-error"></div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg w-100">Send Message</button>
+                    </form>
+                </div>
+
+                <!-- Map & Additional Info -->
+                <div class="animate-on-scroll">
+                    <h3 style="margin-bottom: 1.5rem;">Our Location</h3>
+
+                    <!-- Google Maps Embed -->
+                    <div
+                        style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); margin-bottom: 2rem;">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.7782736886893!2d39.22!3d-6.82!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwNDknMTIuMCJTIDM5wrAxMycxMi4wIkU!5e0!3m2!1sen!2stz!4v1234567890"
+                            width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="card">
+                        <h4 style="margin-bottom: 1.5rem;">Quick Actions</h4>
+                        <div class="flex" style="flex-direction: column; gap: 1rem;">
+                            <a href="quote.html" class="btn btn-secondary w-100">Request a Quote</a>
+                            <a href="products.html" class="btn btn-outline w-100">Browse Products</a>
+                            <a href="https://wa.me/255762354348" target="_blank" class="btn btn-outline w-100"
+                                style="border-color: #25D366; color: #25D366;">
+                                💬 Chat on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Additional Services -->
+                    <div class="card mt-3" style="background: var(--gradient-primary); color: var(--white);">
+                        <h4 style="color: var(--white); margin-bottom: 1rem;">Need Immediate Assistance?</h4>
+                        <p style="opacity: 0.95; margin-bottom: 1rem;">
+                            For urgent inquiries or technical support, call us directly or send a WhatsApp message.
+                            We're here to help!
+                        </p>
+                        <div class="flex gap-sm">
+                            <span class="badge badge-gold">Fast Response</span>
+                            <span class="badge badge-gold">Expert Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section bg-gray">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <h2>Frequently Asked Questions</h2>
+                <p class="section-subtitle">Quick answers to common questions</p>
+            </div>
+
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div class="grid grid-2 gap-lg">
+                    <div class="card animate-on-scroll">
+                        <h5 style="color: var(--primary-green); margin-bottom: 0.75rem;">What are your delivery areas?
+                        </h5>
+                        <p style="color: var(--text-light); font-size: 0.875rem;">
+                            We deliver nationwide across Tanzania, with express delivery available in Dar es Salaam and
+                            major cities.
+                        </p>
+                    </div>
+
+                    <div class="card animate-on-scroll">
+                        <h5 style="color: var(--primary-green); margin-bottom: 0.75rem;">Do you offer bulk discounts?
+                        </h5>
+                        <p style="color: var(--text-light); font-size: 0.875rem;">
+                            Yes! We offer competitive pricing for bulk orders. Contact us for a custom quote based on
+                            your requirements.
+                        </p>
+                    </div>
+
+                    <div class="card animate-on-scroll">
+                        <h5 style="color: var(--primary-green); margin-bottom: 0.75rem;">What payment methods do you
+                            accept?</h5>
+                        <p style="color: var(--text-light); font-size: 0.875rem;">
+                            We accept bank transfers, mobile money (M-Pesa, Airtel Money), and offer flexible payment
+                            terms for established clients.
+                        </p>
+                    </div>
+
+                    <div class="card animate-on-scroll">
+                        <h5 style="color: var(--primary-green); margin-bottom: 0.75rem;">How long does delivery take?
+                        </h5>
+                        <p style="color: var(--text-light); font-size: 0.875rem;">
+                            Delivery times vary by location and product availability. Typically 1-3 days for Dar es
+                            Salaam, 3-7 days nationally.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="images/logo.png" alt="B2B Engineering Services"
+                        style="height: 60px; margin-bottom: 1rem; filter: brightness(0) invert(1);">
+                    <p style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.8);">
+                        Your Engineering Lifeline: Seamless Supply for Industry, Electrical and Construction material
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.266.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059 1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.209-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="about.html" class="footer-link">About Us</a>
+                    <a href="products.html" class="footer-link">Products</a>
+                    <a href="services.html" class="footer-link">Services</a>
+                    <a href="quote.html" class="footer-link">Request Quote</a>
+                    <a href="contact.html" class="footer-link">Contact Us</a>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Our Services</h4>
+                    <a href="services/tools.html" class="footer-link">Tools & Hardware</a>
+                    <a href="services/electrical.html" class="footer-link">Electrical & ICT</a>
+                    <a href="services/materials.html" class="footer-link">Building Materials</a>
+                    <a href="services/industrial.html" class="footer-link">Industrial Equipment</a>
+                    <a href="services/safety.html" class="footer-link">Safety Equipment</a>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 0.5rem;">
+                        📍 P.O. BOX 5566<br>
+                        Kimara Mwisho<br>
+                        Dar es Salaam, Tanzania
+                    </p>
+                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 0.5rem;">
+                        📞 <a href="tel:+255762354348" style="color: var(--accent-gold);">+255 762 354 348</a>
+                    </p>
+                    <p style="color: rgba(255,255,255,0.8);">
+                        📧 <a href="mailto:sales@b2bengineeringservices.com"
+                            style="color: var(--accent-gold);">sales@b2bengineeringservices.com</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 B2B Engineering Services Limited. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/255762354348" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <img src="images/whatsapp-icon.png" alt="WhatsApp" style="width: 35px; height: 35px;">
+    </a>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

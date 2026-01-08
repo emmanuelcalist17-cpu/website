@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Request a quote from B2B Engineering Services Limited. Get competitive pricing for all your engineering supply needs in Tanzania.">
+    <title>Request a Quote | B2B Engineering Services Limited</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container-wide">
+            <div class="header-container">
+                <a href="index.html" class="logo-link">
+                    <img src="images/logo.png" alt="B2B Engineering Services" class="logo">
+                </a>
+
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About Us</a>
+                    <a href="products.html" class="nav-link">Products</a>
+                    <a href="services.html" class="nav-link">Services</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                    <a href="quote.html" class="btn btn-primary btn-sm">Request Quote</a>
+                </nav>
+
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-redesign" style="background-image: url('images/hero-background.png');">
+        <div class="container-wide">
+            <div class="hero-content-redesign animate-on-scroll">
+                <h1 class="hero-title">Request a Quote</h1>
+                <p class="hero-subtitle">Get a competitive quote tailored to your needs</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Form Section -->
+    <section class="section" id="quote-form-section">
+        <div class="container" style="max-width: 900px;">
+            <div class="grid grid-2 gap-lg">
+                <!-- Form -->
+                <div style="grid-column: 1 / -1;">
+                    <div class="card-glass" style="padding: 3rem;">
+                        <h2 style="margin-bottom: 1rem; color: var(--primary-green);">Tell Us About Your Requirements
+                        </h2>
+                        <p style="color: var(--text-light); margin-bottom: 2rem;">
+                            Fill out the form below with as much detail as possible. Our team will review your
+                            requirements and get back to you within 24 hours with a competitive quote.
+                        </p>
+
+                        <form id="quoteForm" onsubmit="window.B2BWebsite.handleFormSubmit(event, 'quoteForm')">
+                            <!-- Personal Information -->
+                            <div style="margin-bottom: 2rem;">
+                                <h4
+                                    style="color: var(--primary-dark); margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--primary-green);">
+                                    📋 Contact Information
+                                </h4>
+
+                                <div class="grid grid-2 gap-md">
+                                    <div class="form-group">
+                                        <label for="name" class="form-label">Full Name *</label>
+                                        <input type="text" id="name" name="name" class="form-control" required>
+                                        <div class="form-error"></div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="company" class="form-label">Company Name *</label>
+                                        <input type="text" id="company" name="company" class="form-control" required>
+                                        <div class="form-error"></div>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-2 gap-md">
+                                    <div class="form-group">
+                                        <label for="email" class="form-label">Email Address *</label>
+                                        <input type="email" id="email" name="email" class="form-control" required>
+                                        <div class="form-error"></div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="phone" class="form-label">Phone Number *</label>
+                                        <input type="tel" id="phone" name="phone" class="form-control" required
+                                            placeholder="+255...">
+                                        <div class="form-error"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Project Details -->
+                            <div style="margin-bottom: 2rem;">
+                                <h4
+                                    style="color: var(--primary-dark); margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--primary-green);">
+                                    🏗️ Project Details
+                                </h4>
+
+                                <div class="form-group">
+                                    <label for="projectName" class="form-label">Project Name</label>
+                                    <input type="text" id="projectName" name="projectName" class="form-control"
+                                        placeholder="e.g., Office Building Construction">
+                                </div>
+
+                                <div class="grid grid-2 gap-md">
+                                    <div class="form-group">
+                                        <label for="industry" class="form-label">Industry</label>
+                                        <select id="industry" name="industry" class="form-control">
+                                            <option value="">Select your industry</option>
+                                            <option value="construction">Construction & Infrastructure</option>
+                                            <option value="manufacturing">Manufacturing & Industrial</option>
+                                            <option value="agriculture">Agriculture & Farming</option>
+                                            <option value="healthcare">Healthcare & Medical</option>
+                                            <option value="education">Education & Institutions</option>
+                                            <option value="government">Government & Public Sector</option>
+                                            <option value="hospitality">Hospitality & Tourism</option>
+                                            <option value="energy">Energy & Utilities</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="timeline" class="form-label">Required Timeline</label>
+                                        <select id="timeline" name="timeline" class="form-control">
+                                            <option value="">Select timeline</option>
+                                            <option value="urgent">Urgent (1-7 days)</option>
+                                            <option value="short">Short-term (1-4 weeks)</option>
+                                            <option value="medium">Medium-term (1-3 months)</option>
+                                            <option value="long">Long-term (3+ months)</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="budget" class="form-label">Estimated Budget Range</label>
+                                    <select id="budget" name="budget" class="form-control">
+                                        <option value="">Select budget range (optional)</option>
+                                        <option value="under-1m">Under 1M TZS</option>
+                                        <option value="1m-5m">1M - 5M TZS</option>
+                                        <option value="5m-10m">5M - 10M TZS</option>
+                                        <option value="10m-50m">10M - 50M TZS</option>
+                                        <option value="over-50m">Over 50M TZS</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Product/Service Selection -->
+                            <div style="margin-bottom: 2rem;">
+                                <h4
+                                    style="color: var(--primary-dark); margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--primary-green);">
+                                    📦 Products/Services Needed
+                                </h4>
+
+                                <div class="grid grid-2 gap-sm" style="margin-bottom: 1rem;">
+                                    <label class="filter-option"
+                                        style="background: var(--neutral-gray); padding: 0.75rem; border-radius: var(--radius-md);">
+                                        <input type="checkbox" name="products" value="tools">
+                                        <span>Tools & Hardware</span>
+                                    </label>
+                                    <label class="filter-option"
+                                        style="background: var(--neutral-gray); padding: 0.75rem; border-radius: var(--radius-md);">
+                                        <input type="checkbox" name="products" value="electrical">
+                                        <span>Electrical & ICT</span>
+                                    </label>
+                                    <label class="filter-option"
+                                        style="background: var(--neutral-gray); padding: 0.75rem; border-radius: var(--radius-md);">
+                                        <input type="checkbox" name="products" value="materials">
+                                        <span>Building Materials</span>
+                                    </label>
+                                    <label class="filter-option"
+                                        style="background: var(--neutral-gray); padding: 0.75rem; border-radius: var(--radius-md);">
+                                        <input type="checkbox" name="products" value="industrial">
+                                        <span>Industrial Equipment</span>
+                                    </label>
+                                    <label class="filter-option"
+                                        style="background: var(--neutral-gray); padding: 0.75rem; border-radius: var(--radius-md);">
+                                        <input type="checkbox" name="products" value="safety">
+                                        <span>Safety Equipment</span>
+                                    </label>
+
+
+
+                                </div>
+                            </div>
+
+                            <!-- Detailed Requirements -->
+                            <div style="margin-bottom: 2rem;">
+                                <h4
+                                    style="color: var(--primary-dark); margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--primary-green);">
+                                    📝 Detailed Requirements
+                                </h4>
+
+                                <div class="form-group">
+                                    <label for="requirements" class="form-label">Describe Your Requirements in Detail
+                                        *</label>
+                                    <textarea id="requirements" name="requirements" class="form-control" rows="6"
+                                        required
+                                        placeholder="Please provide details such as:&#10;- Specific products needed&#10;- Quantities required&#10;- Technical specifications&#10;- Delivery location&#10;- Any special requirements"></textarea>
+                                    <div class="form-error"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="files" class="form-label">Attach Files (Specifications, Drawings,
+                                        BOQ)</label>
+                                    <input type="file" id="files" name="files" class="form-control" multiple
+                                        accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.png">
+                                    <p style="font-size: 0.875rem; color: var(--text-light); margin-top: 0.5rem;">
+                                        You can upload PDFs, Word documents, Excel files, or images. Max 10MB per file.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Preferred Contact Method -->
+                            <div style="margin-bottom: 2rem;">
+                                <h4
+                                    style="color: var(--primary-dark); margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--primary-green);">
+                                    📞 Preferred Contact Method
+                                </h4>
+
+                                <div class="grid grid-3 gap-md">
+                                    <label class="filter-option"
+                                        style="background: var(--neutral-gray); padding: 1rem; border-radius: var(--radius-md); justify-content: center;">
+                                        <input type="radio" name="contactMethod" value="email" checked>
+                                        <span>📧 Email</span>
+                                    </label>
+                                    <label class="filter-option"
+                                        style="background: var(--neutral-gray); padding: 1rem; border-radius: var(--radius-md); justify-content: center;">
+                                        <input type="radio" name="contactMethod" value="phone">
+                                        <span>📞 Phone</span>
+                                    </label>
+                                    <label class="filter-option"
+                                        style="background: var(--neutral-gray); padding: 1rem; border-radius: var(--radius-md); justify-content: center;">
+                                        <input type="radio" name="contactMethod" value="whatsapp">
+                                        <span>💬 WhatsApp</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit" class="btn btn-primary btn-lg w-100">
+                                Submit Quote Request
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What Happens Next Section -->
+            <div class="section-title mt-4 animate-on-scroll">
+                <h3>What Happens Next?</h3>
+            </div>
+
+            <div class="grid grid-3 gap-lg animate-on-scroll">
+                <div class="card text-center">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">⏱️</div>
+                    <h5 style="margin-bottom: 0.75rem;">1. Quick Review</h5>
+                    <p style="font-size: 0.875rem; color: var(--text-light);">
+                        Our team reviews your request within 2 business hours
+                    </p>
+                </div>
+
+                <div class="card text-center">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">💰</div>
+                    <h5 style="margin-bottom: 0.75rem;">2. Detailed Quote</h5>
+                    <p style="font-size: 0.875rem; color: var(--text-light);">
+                        Receive a comprehensive quote within 24 hours
+                    </p>
+                </div>
+
+                <div class="card text-center">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">✅</div>
+                    <h5 style="margin-bottom: 0.75rem;">3. Fast Delivery</h5>
+                    <p style="font-size: 0.875rem; color: var(--text-light);">
+                        Once approved, we process and deliver quickly
+                    </p>
+                </div>
+            </div>
+
+            <!-- Trust Signals -->
+            <div class="card-glass mt-4 animate-on-scroll" style="padding: 2rem; text-align: center;">
+                <div class="flex-center gap-lg" style="flex-wrap: wrap;">
+                    <div class="flex-center gap-sm">
+                        <span style="font-size: 2rem;">🔒</span>
+                        <span style="font-weight: 600;">Confidential</span>
+                    </div>
+                    <div class="flex-center gap-sm">
+                        <span style="font-size: 2rem;">📋</span>
+                        <span style="font-weight: 600;">No Obligation</span>
+                    </div>
+                    <div class="flex-center gap-sm">
+                        <span style="font-size: 2rem;">💼</span>
+                        <span style="font-weight: 600;">Free Consultation</span>
+                    </div>
+                    <div class="flex-center gap-sm">
+                        <span style="font-size: 2rem;">⚡</span>
+                        <span style="font-weight: 600;">24-Hour Response</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="images/logo.png" alt="B2B Engineering Services"
+                        style="height: 60px; margin-bottom: 1rem; filter: brightness(0) invert(1);">
+                    <p style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.8);">
+                        Your Engineering Lifeline: Seamless Supply for Industry, Electrical and Construction material
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.266.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059 1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.209-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="about.html" class="footer-link">About Us</a>
+                    <a href="products.html" class="footer-link">Products</a>
+                    <a href="services.html" class="footer-link">Services</a>
+                    <a href="quote.html" class="footer-link">Request Quote</a>
+                    <a href="contact.html" class="footer-link">Contact Us</a>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Our Services</h4>
+                    <a href="services/tools.html" class="footer-link">Tools & Hardware</a>
+                    <a href="services/electrical.html" class="footer-link">Electrical & ICT</a>
+                    <a href="services/materials.html" class="footer-link">Building Materials</a>
+                    <a href="services/industrial.html" class="footer-link">Industrial Equipment</a>
+                    <a href="services/safety.html" class="footer-link">Safety Equipment</a>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 0.5rem;">
+                        📍 P.O. BOX 5566<br>
+                        Kimara Mwisho<br>
+                        Dar es Salaam, Tanzania
+                    </p>
+                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 0.5rem;">
+                        📞 <a href="tel:+255762354348" style="color: var(--accent-gold);">+255 762 354 348</a>
+                    </p>
+                    <p style="color: rgba(255,255,255,0.8);">
+                        📧 <a href="mailto:sales@b2bengineeringservices.com"
+                            style="color: var(--accent-gold);">sales@b2bengineeringservices.com</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 B2B Engineering Services Limited. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/255762354348" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <img src="images/whatsapp-icon.png" alt="WhatsApp" style="width: 35px; height: 35px;">
+    </a>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
