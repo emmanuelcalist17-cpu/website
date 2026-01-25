@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initScrollAnimations();
     initAnimatedCounters();
     initMobileMenu();
+    initSlideshow();
 });
 
 // === NAVIGATION === //
@@ -498,6 +499,79 @@ function performSearch(query) {
     // This would normally query a backend or search index
     // For now, it's a placeholder
     console.log('Searching for:', query);
+}
+
+// === SLIDESHOW === //
+function initSlideshow() {
+    const slideshowContainer = document.querySelector('.slideshow-container');
+    if (!slideshowContainer) return;
+
+    const slides = document.querySelectorAll('.slideshow-slide');
+    const indicators = document.querySelectorAll('.indicator');
+    const prevBtn = document.querySelector('.slideshow-prev');
+    const nextBtn = document.querySelector('.slideshow-next');
+
+    let currentSlide = 0;
+    let autoPlayInterval;
+
+    // Show slide by index
+    function showSlide(n) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        indicators.forEach(indicator => indicator.classList.remove('active'));
+
+        slides[n].classList.add('active');
+        indicators[n].classList.add('active');
+    }
+
+    // Next slide
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+        resetAutoPlay();
+    }
+
+    // Previous slide
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+        resetAutoPlay();
+    }
+
+    // Auto play slideshow
+    function startAutoPlay() {
+        autoPlayInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    }
+
+    // Reset auto play timer
+    function resetAutoPlay() {
+        clearInterval(autoPlayInterval);
+        startAutoPlay();
+    }
+
+    // Event listeners
+    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            currentSlide = index;
+            showSlide(currentSlide);
+            resetAutoPlay();
+        });
+    });
+
+    // Initialize
+    showSlide(0);
+    startAutoPlay();
+
+    // Pause autoplay on hover
+    slideshowContainer.addEventListener('mouseenter', () => {
+        clearInterval(autoPlayInterval);
+    });
+
+    slideshowContainer.addEventListener('mouseleave', () => {
+        startAutoPlay();
+    });
 }
 
 // Export functions for use in other scripts
