@@ -27,8 +27,11 @@ function initNavigation() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
     navLinks.forEach(link => {
-        if (link.getAttribute('href') === currentPage) {
+        const href = link.getAttribute('href');
+        if (href === currentPage || (currentPage === '' && href === 'index.html')) {
             link.classList.add('active');
+        } else {
+            link.classList.remove('active');
         }
     });
 }
