@@ -1272,14 +1272,15 @@ select.form-control {
   }
 
   .footer-main {
-    padding: var(--spacing-2xl) 0;
+    /* increase top spacing so content isn't cramped against the colored area above */
+    padding: calc(var(--spacing-xxl) + 1.5rem) 0;
   }
 
   .footer-grid {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1.5fr;
-    gap: var(--spacing-2xl);
-    margin-bottom: var(--spacing-2xl);
+    gap: var(--spacing-xxl);
+    margin-bottom: var(--spacing-xxl);
   }
 
   /* Brand Section */
@@ -1419,15 +1420,21 @@ select.form-control {
   }
 
   .contact-icon {
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 193, 7, 0.1);
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 193, 7, 0.06);
     border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    font-size: 1.2rem;
+  }
+
+  .contact-icon img {
+    width: 22px;
+    height: 22px;
+    display: block;
+    color: var(--accent-gold);
   }
 
   .contact-details {
