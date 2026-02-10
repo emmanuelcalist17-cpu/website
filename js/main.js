@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initAnimatedCounters();
     initMobileMenu();
     initSlideshow();
+    initCategoriesSlider();
 });
 
 // === NAVIGATION === //
@@ -575,6 +576,78 @@ function initSlideshow() {
     slideshowContainer.addEventListener('mouseleave', () => {
         startAutoPlay();
     });
+}
+
+// === CATEGORIES SLIDER === //
+function initCategoriesSlider() {
+    const slider = document.querySelector('.categories-slider');
+    const prevBtn = document.querySelector('.slider-controls .slider-btn:first-child');
+    const nextBtn = document.querySelector('.slider-controls .slider-btn:last-child');
+
+    if (!slider || !prevBtn || !nextBtn) return;
+
+    // Configuration for 3 cards visible at a time
+    const cardsPerView = 3;
+    const cardGap = 24; // var(--spacing-lg) = 24px
+    let currentScroll = 0;
+
+    function getCardWidth() {
+        // Get actual card width from first card
+        const firstCard = slider.querySelector('.category-card');
+        if (firstCard) {
+            return firstCard.offsetWidth;
+        }
+        return 350; // fallback
+    }
+
+    function getScrollAmount() {
+        // Scroll by exactly 3 cards (or however many are visible)
+        const cardWidth = getCardWidth();
+        return cardWidth + cardGap; // One card width plus gap
+    }
+
+    function scrollToPosition(position) {
+        slider.scrollTo({
+            left: position,
+            behavior: 'smooth'
+        });
+        currentScroll = position;
+    }
+
+    prevBtn.addEventListener('click', () => {
+        const scrollAmount = getScrollAmount();
+        const newPosition = Math.max(0, currentScroll - scrollAmount);
+        scrollToPosition(newPosition);
+    });
+
+    nextBtn.addEventListener('click', () => {
+        const scrollAmount = getScrollAmount();
+        const maxScroll = slider.scrollWidth - slider.clientWidth;
+        const newPosition = Math.min(maxScroll, currentScroll + scrollAmount);
+        scrollToPosition(newPosition);
+    });
+
+    // Track scroll position for button states
+    slider.addEventListener('scroll', () => {
+        currentScroll = slider.scrollLeft;
+        updateButtonStates();
+    });
+
+    function updateButtonStates() {
+        const isAtStart = currentScroll <= 5; // Small tolerance for rounding
+        const isAtEnd = currentScroll >= slider.scrollWidth - slider.clientWidth - 5;
+
+        prevBtn.style.opacity = isAtStart ? '0.5' : '1';
+        prevBtn.style.cursor = isAtStart ? 'not-allowed' : 'pointer';
+        prevBtn.style.pointerEvents = isAtStart ? 'none' : 'auto';
+
+        nextBtn.style.opacity = isAtEnd ? '0.5' : '1';
+        nextBtn.style.cursor = isAtEnd ? 'not-allowed' : 'pointer';
+        nextBtn.style.pointerEvents = isAtEnd ? 'none' : 'auto';
+    }
+
+    // Initialize button states
+    updateButtonStates();
 }
 
 // Export functions for use in other scripts
