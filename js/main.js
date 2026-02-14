@@ -1,7 +1,41 @@
 // B2B Engineering Services - Main JavaScript
 // Core functionality for website interactions
 
+// === DARK MODE FUNCTIONALITY === //
+function initDarkMode() {
+    const darkModeToggle = document.querySelector('.dark-mode-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const htmlElement = document.documentElement;
+    
+    // Check for saved preference or default to light mode
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    if (currentTheme === 'dark') {
+        htmlElement.setAttribute('data-theme', 'dark');
+        themeIcon.textContent = '☀️';
+    } else {
+        htmlElement.removeAttribute('data-theme');
+        themeIcon.textContent = '🌙';
+    }
+    
+    // Toggle dark mode on button click
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener('click', () => {
+            const theme = htmlElement.getAttribute('data-theme');
+            if (theme === 'dark') {
+                htmlElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+                themeIcon.textContent = '🌙';
+            } else {
+                htmlElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                themeIcon.textContent = '☀️';
+            }
+        });
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function () {
+    initDarkMode();
     initNavigation();
     initScrollAnimations();
     initAnimatedCounters();
